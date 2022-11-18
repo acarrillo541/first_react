@@ -23,7 +23,7 @@ class Board extends React.Component{
 
     handleClick(i){
       // return if won or full 
-      if (calculateWinner(this.state.squares) || this.state.squares) return;
+      if (calculateWinner(this.state.squares) || this.state.squares[i]) return;
 
       const squares = this.state.squares.slice();
       squares[i] = this.state.xIsNext ? "X" : "O";
@@ -70,6 +70,14 @@ class Board extends React.Component{
 }
 
 class Game extends React.Component{
+  constructor(props){
+    super(props);
+    this.state={
+      history: [{
+        squares:Array(9).fill(null)
+      }],
+    }
+  }
   render(){
     return (
       <div className="game">
