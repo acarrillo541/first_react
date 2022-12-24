@@ -69,6 +69,17 @@ class Board extends React.Component{
       }
 }
 
+class GameInfo extends React.Component{
+  render(){
+    return(
+      <div className='gameInfo'>
+        hello world
+      </div>
+
+    );
+  }
+}
+
 class Game extends React.Component{
   constructor(props){
     super(props);
@@ -85,8 +96,7 @@ class Game extends React.Component{
           <Board/>
         </div>
         <div className="game-info">
-          <div>{/*status*/}</div>
-          <ol>{/*TO_DO*/}</ol>
+          <GameInfo/>
         </div>
       </div>
     );
